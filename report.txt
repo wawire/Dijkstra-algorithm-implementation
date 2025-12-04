@@ -7,9 +7,9 @@ c. KNOWN BUGS AND INCOMPLETE IMPLEMENTATION:
 There are no known bugs in the current implementation. All three required outputs (adjacency matrix, odd-degree nodes, and Dijkstra's shortest paths) are fully implemented and tested. The program correctly handles the sample test case (tiny-weighted.txt) and produces output matching the expected format.
 
 d. EXTERNAL RESOURCES USED:
-- Course lecture slides on graph algorithms and Dijkstra's algorithm
-- C++ reference documentation for standard libraries (iostream, climits)
-- Introduction to Algorithms (CLRS) textbook for Dijkstra's algorithm pseudocode
+- Dijkstra's algorithm and graph algorithms lecture notes from CSE 310
+- cppreference.com (2024). C++ Standard Library Reference. https://en.cppreference.com/w/ - Used for iostream, climits, and dynamic memory allocation documentation
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press. - Reference for Dijkstra's algorithm implementation
 - Project specification document provided on Canvas
 
 e. DESIGN DECISIONS:
