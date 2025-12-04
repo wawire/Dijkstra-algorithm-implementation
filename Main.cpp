@@ -1,4 +1,5 @@
 #include "Edge.h"
+#include "Graph.h"
 #include <iostream>
 
 int main(){
@@ -14,22 +15,37 @@ int main(){
     }
     else{
         std::cout<<"Input not found!"<<std::endl;
-        return NULL;
+        return 1;
     }
 
-    while(!std::cin.eof()){
+    // Create graph
+    Graph* graph = new Graph(numOfVertices);
+
+    // Read edges and build graph
+    for(int i = 0; i < numOfEdges; i++){
         int startVertice;
         int endVertice;
         int weight;
         std::cin >> startVertice;
         std::cin >> endVertice;
         std::cin >> weight;
-        Edge* newEdge = new Edge(startVertice, endVertice);
-        newEdge->setWeight(weight);
-        // Here is where you load up the Graph object
+        graph->addEdge(startVertice, endVertice, weight);
     }
 
-    // And here is where you start working on the three tasks
+    // Task 1: Print adjacency matrix
+    graph->printAdjMatrix();
+
+    // Calculate degrees for all vertices
+    graph->calculateDegrees();
+
+    // Task 2: Print odd degree nodes
+    std::cout << std::endl;
+    graph->printOddDegreeNodes();
+
+    // Task 3: Run Dijkstra from all odd degree nodes
+    graph->runDijkstraFromOddNodes();
+
+    delete graph;
 
     return 0;
 }
