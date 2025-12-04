@@ -1,0 +1,31 @@
+PROJECT 2 - DIJKSTRA'S ALGORITHM IMPLEMENTATION REPORT
+
+b. PROBLEMS ENCOUNTERED:
+The main challenge encountered was managing memory correctly with dynamic 2D arrays for the adjacency matrix without using STL containers like vector. I had to carefully allocate and deallocate memory in the Graph constructor and destructor to avoid memory leaks. Additionally, there was a typo in the provided Vertex.cpp template (line 9: 'Index' instead of 'index') that needed to be fixed for the code to compile.
+
+c. KNOWN BUGS AND INCOMPLETE IMPLEMENTATION:
+There are no known bugs in the current implementation. All three required outputs (adjacency matrix, odd-degree nodes, and Dijkstra's shortest paths) are fully implemented and tested. The program correctly handles the sample test case (tiny-weighted.txt) and produces output matching the expected format.
+
+d. EXTERNAL RESOURCES USED:
+- Course lecture slides on graph algorithms and Dijkstra's algorithm
+- C++ reference documentation for standard libraries (iostream, climits)
+- Introduction to Algorithms (CLRS) textbook for Dijkstra's algorithm pseudocode
+- Project specification document provided on Canvas
+
+e. DESIGN DECISIONS:
+Data Structures:
+- Adjacency Matrix: I used a dynamically allocated 2D integer array (int**) to store the graph's adjacency matrix, with 0 representing no edge between nodes and positive integers representing edge weights. This allows O(1) edge lookup time.
+- Vertex Array: Created an array of Vertex objects to store each node's index and degree information.
+- Dijkstra's Arrays: Used simple integer arrays for distances (dist[]) and boolean arrays for visited status (visited[]) during Dijkstra's algorithm execution.
+
+Classes and Modular Design:
+- Graph Class: Designed a Graph class that encapsulates all graph operations including adding edges, calculating degrees, printing the adjacency matrix, finding odd-degree nodes, and running Dijkstra's algorithm.
+- Vertex Class: Used the provided Vertex class to store node properties (index and degree).
+- Edge Class: The provided Edge class was kept for potential future use, though not extensively used in the current implementation.
+
+Algorithm Implementation:
+- Dijkstra's Algorithm: Implemented the classic single-source shortest path algorithm using a simple linear search to find the minimum distance unvisited vertex in each iteration. This results in O(V²) time complexity, which is acceptable for the project requirements.
+- Degree Calculation: Computed each vertex's degree by counting non-zero entries in its adjacency matrix row.
+- Odd-Degree Detection: Iterated through all vertices and collected those with odd degrees into a dynamically allocated array, then sorted by index (naturally sorted due to sequential iteration).
+
+The implementation successfully compiles with the provided Makefile and correctly processes the input format specified, producing output that matches the expected format exactly.

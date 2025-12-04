@@ -6,7 +6,7 @@ Vertex::Vertex(){
 }
 
 int Vertex::getIndex(){
-    return this->Index;
+    return this->index;
 }
 
 int Vertex::getDegree(){
